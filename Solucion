@@ -54,4 +54,49 @@ object Main {
 
   } 
   
-  
+  def punto2(c1: Int,c2: Int,h: Int): String={
+    import scala.math
+    var bandera=1
+
+    if (math.pow(h,2) == math.pow(c1,2)+math.pow(c2,2)){
+
+       bandera = 1
+
+    }else{
+
+      bandera=0
+    }
+
+    if (bandera==1){
+
+      return("Los valores cumplen el teorema")
+    }else{
+
+      return("los valores no cumplen el teorema")
+    }
+
+
+  }
+
+  def factorial(numero: Int): Int = if (numero == 0) 1
+    else numero * factorial(numero - 1)
+
+  def punto3(n:Int): Double={
+    import scala.math
+
+    var suma = 0:Double
+    for( i <- 0 to n){
+      suma = suma+(math.pow(1,i)*(1/factorial(i)))
+    }
+    return (factorial(n)*suma)
+  }
+
+  def punto4[A](ls: List[A], k: Int): List[List[A]] = {
+
+    if (k == 0) List(Nil)
+    else ls match {
+      case Nil => List()
+      case h :: t => punto4(t, k) ++ punto4(t, k - 1).map(h :: _)
+    }
+
+  }
