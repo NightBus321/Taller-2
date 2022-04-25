@@ -1,0 +1,57 @@
+object Main {
+  def main(args: Array[String]): Unit = {
+
+    //PUNTO1
+    println(punto1("mora","roma"))
+
+    //PUNTO2
+    println(punto2(3,4,5))
+
+    //PUNTO3
+    println(punto3(20))
+
+    //PUNTO4
+    println(punto4(List(1, 2, 3, 4), 3))
+
+    //PUNTO5
+    var n = 20
+    for (row <- 0 to n) {
+      for (col <- 0 to row)
+        print(punto5(col, row) + " ")
+      println()
+    }
+
+
+  }
+
+  def punto1(cadena1: String,cadena2: String): String ={
+
+    var t1 = cadena1.toCharArray
+    var t2 = cadena2.toCharArray
+    var bandera=1
+
+    t1= t1.sorted
+    t2= t2.sorted
+
+    if (t1.length == t2.length){
+
+      for( i <- 0 to t1.length-1){
+        if (t1(i)!=t2(i)){
+          bandera=0
+        }
+      }
+
+    }else{
+      bandera = 0
+    }
+
+
+    if (bandera == 1){
+      return ("Si son anagramas")
+    }else{
+      return ("No son anagramas")
+    }
+
+  } 
+  
+  
