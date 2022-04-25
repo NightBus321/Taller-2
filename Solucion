@@ -99,4 +99,12 @@ object Main {
       case h :: t => punto4(t, k) ++ punto4(t, k - 1).map(h :: _)
     }
 
+  } 
+  
+  def punto5(c: Int, r: Int): Int = {
+    if (c == 0 || c == r) 1
+    else
+      punto5(c - 1, r - 1) + punto5(c, r - 1)
   }
+
+}
